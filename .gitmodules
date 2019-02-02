@@ -1,0 +1,6 @@
+[submodule "components/ODROID-GO"]
+	path = components/ODROID-GO
+	url = https://github.com/dleslie/ODROID-GO
+[submodule "components/arduino-esp32"]
+	path = components/arduino-esp32
+	url = https://github.com/dleslie/arduino-esp32
