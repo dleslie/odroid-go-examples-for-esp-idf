@@ -58,8 +58,14 @@ void Examples::Bluetooth::setup() {
 }
 
 void Examples::Bluetooth::loop() {
-  if (impl->serialBT.available())
-    GO.lcd.println(impl->serialBT.read());
+  bool didWrite = false;
+  while (impl->serialBT.available()) {
+    GO.lcd.printf("%c", (char)impl->serialBT.read());
+    didWrite = true;
+  }
+  if (didWrite)
+    GO.lcd.printf("\n");
+  
   if (GO.BtnA.wasPressed() == 1)
     impl->writeLineToBT("Button A pressed\n");
   if (GO.BtnB.wasPressed() == 1)
