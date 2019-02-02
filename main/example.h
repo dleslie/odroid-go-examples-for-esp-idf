@@ -71,4 +71,15 @@ namespace Examples {
   private:
     std::shared_ptr<SpeakerImpl> impl;
   };
+
+  class BluetoothImpl;
+  class Bluetooth : public Example { 
+  public:		       
+    virtual const char * name();	      
+    virtual void setup();	      
+    virtual void loop();	      
+    virtual void takedown();
+  private:
+    std::shared_ptr<BluetoothImpl> impl;
+  };
 }

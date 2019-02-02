@@ -23,7 +23,7 @@ void Examples::BreathingLED::setup() {
   pinVal = 0;
   ascending = true;
 
-  GO.lcd.setTextSize(1);
+  GO.lcd.println("LED");
 }
 
 void Examples::BreathingLED::loop() {

@@ -112,6 +112,8 @@ void Examples::Speaker::setup() {
   			  10,		    // Priority
   			  &this->impl->task_handles[0], // Handle
   			  1);		    // Core
+
+  GO.lcd.println("Speaker");
 }
 
 void Examples::Speaker::loop() {
