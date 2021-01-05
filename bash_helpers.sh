@@ -55,5 +55,3 @@ function setup_esp32() {
 
 export setup_esp32
 export install_esp32
-
-install_esp32
