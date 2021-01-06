@@ -36,7 +36,7 @@ RUN git clone https://github.com/dleslie/ODROID-GO.git /opt/Arduino/libraries/OD
 RUN cd /opt/esp && \
     git clone https://github.com/OtherCrashOverride/esp-idf --recursive esp-idf-odroidgo && \
     python -m pip install --user -r /opt/esp/esp-idf-odroidgo/docs/requirements.txt && \
-    ln -s /opt/esp/esp-idf-official /opt/esp/esp-idf
+    ln -s /opt/esp/esp-idf-odroidgo /opt/esp/esp-idf
 
 ENV PATH="/opt/Arduino/hardware/espressif/esp32/tools/xtensa-esp32-elf/bin":/opt/bin:$PATH
 ENV IDF_PATH="/opt/esp/esp-idf"
