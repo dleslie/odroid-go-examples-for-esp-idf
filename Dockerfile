@@ -26,8 +26,8 @@ WORKDIR /opt
 COPY mkfw /opt/mkfw
 RUN cd mkfw && make && cp /opt/mkfw/mkfw /opt/bin && rm -rf /opt/mkfw
 
-RUN git clone https://github.com/hardkernel/ODROID-GO.git /opt/Arduino/libraries/ODROID-GO && \
-    git clone https://github.com/espressif/arduino-esp32.git /opt/Arduino/hardware/espressif/esp32 && \
+RUN git clone https://github.com/dleslie/ODROID-GO.git /opt/Arduino/libraries/ODROID-GO && \
+    git clone https://github.com/dleslie/arduino-esp32.git /opt/Arduino/hardware/espressif/esp32 && \
     cd /opt/Arduino/hardware/espressif/esp32 && \
     git submodule update --init --recursive && \
     cd /opt/Arduino/hardware/espressif/esp32/tools && \
@@ -36,8 +36,6 @@ RUN git clone https://github.com/hardkernel/ODROID-GO.git /opt/Arduino/libraries
 RUN cd /opt/esp && \
     git clone https://github.com/OtherCrashOverride/esp-idf --recursive esp-idf-odroidgo && \
     python -m pip install --user -r /opt/esp/esp-idf-odroidgo/docs/requirements.txt && \
-    git clone -b v3.2 --recursive https://github.com/espressif/esp-idf.git esp-idf-official && \
-    python -m pip install --user -r /opt/esp/esp-idf-official/requirements.txt && \
     ln -s /opt/esp/esp-idf-official /opt/esp/esp-idf
 
 ENV PATH="/opt/Arduino/hardware/espressif/esp32/tools/xtensa-esp32-elf/bin":/opt/bin:$PATH
